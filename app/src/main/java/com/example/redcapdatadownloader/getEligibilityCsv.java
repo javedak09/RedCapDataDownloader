@@ -63,7 +63,7 @@ public class getEligibilityCsv extends AsyncTask<String, String, String> {
             Log.d(TAG, "doInBackground: Trying...");
             if (serverURL == null) {
                 //    url = new URL("http://43.245.131.159:8080/dss/api/getdata.php");
-                url = new URL("https://pedres2.aku.edu/GSEDapi/export_records_gsed.php");
+                url = new URL("https://pedres3.aku.edu/GSEDapi/export_records_gsed.php");
             } else {
                 url = serverURL;
             }
@@ -150,6 +150,8 @@ public class getEligibilityCsv extends AsyncTask<String, String, String> {
                         /*if (!csvFile.exists()) {
                             csvFolder.mkdirs();
                         }*/
+
+
                         writer = new CSVWriter(new FileWriter(csvFile));
                         List<String[]> data = new ArrayList<String[]>();
                     /*
@@ -163,32 +165,54 @@ public class getEligibilityCsv extends AsyncTask<String, String, String> {
                     */
 
 
-                        /*data.add(new String[]{
-                                "parent_study_id_key",
-                                "child_name",
-                                "mother_name",
-                                "father_name",
-                                "child_sex",
-                                "child_dob",
-                                "child_ga",
-                                "child_edd"
+                        data.add(new String[]{
+                                "enroll_ch_study_id",
+                                "enroll_q1",
+                                "enroll_q2",
+                                "enroll_q3",
+                                "enroll_q4",
+                                "enroll_q5",
+                                "enroll_q6",
+                                "enroll_q7",
+                                "enroll_q8",
+                                "enroll_q9",
+                                "enroll_q10",
+                                "enroll_q11",
+                                "enroll_hou_q12",
+                                "enroll_sec_q12",
+                                "enroll_land_q12",
+                                "enroll_q14",
+                                "enroll_q15",
+                                "enroll_q16"
                         });
                         for (int i = 0; i < jsonArray.length(); i++) {
                             JSONObject jsonObjectCC = jsonArray.getJSONObject(i);
                             data.add(new String[]{
-                                    jsonObjectCC.getString("parent_study_id_key").equals("null") ? "" : jsonObjectCC.getString("parent_study_id_key"),
-                                    jsonObjectCC.getString("child_name").equals("null") ? "" : jsonObjectCC.getString("child_name"),
-                                    jsonObjectCC.getString("mother_name").equals("null") ? "" : jsonObjectCC.getString("mother_name"),
-                                    jsonObjectCC.getString("father_name").equals("null") ? "" : jsonObjectCC.getString("father_name"),
-                                    jsonObjectCC.getString("child_sex").equals("null") ? "" : jsonObjectCC.getString("child_sex"),
-                                    jsonObjectCC.getString("child_ga").equals("null") ? "" : jsonObjectCC.getString("child_ga"),
-                                    jsonObjectCC.getString("child_ga").equals("null") ? "" : jsonObjectCC.getString("child_ga"),
-                                    jsonObjectCC.getString("child_edd").equals("null") ? "" : jsonObjectCC.getString("child_edd"),
+                                    jsonObjectCC.getString("enroll_ch_study_id").equals("null") ? "" : jsonObjectCC.getString("enroll_ch_study_id"),
+                                    jsonObjectCC.getString("enroll_q1").equals("null") ? "" : jsonObjectCC.getString("enroll_q1"),
+                                    jsonObjectCC.getString("enroll_q2").equals("null") ? "" : jsonObjectCC.getString("enroll_q2"),
+                                    jsonObjectCC.getString("enroll_q3").equals("null") ? "" : jsonObjectCC.getString("enroll_q3"),
+                                    jsonObjectCC.getString("enroll_q4").equals("null") ? "" : jsonObjectCC.getString("enroll_q4"),
+                                    jsonObjectCC.getString("enroll_q5").equals("null") ? "" : jsonObjectCC.getString("enroll_q5"),
+                                    jsonObjectCC.getString("enroll_q6").equals("null") ? "" : jsonObjectCC.getString("enroll_q6"),
+                                    jsonObjectCC.getString("enroll_q7").equals("null") ? "" : jsonObjectCC.getString("enroll_q7"),
+                                    jsonObjectCC.getString("enroll_q8").equals("null") ? "" : jsonObjectCC.getString("enroll_q8"),
+                                    jsonObjectCC.getString("enroll_q9").equals("null") ? "" : jsonObjectCC.getString("enroll_q9"),
+                                    jsonObjectCC.getString("enroll_q10").equals("null") ? "" : jsonObjectCC.getString("enroll_q10"),
+                                    jsonObjectCC.getString("enroll_q11").equals("null") ? "" : jsonObjectCC.getString("enroll_q11"),
+                                    jsonObjectCC.getString("enroll_hou_q12").equals("null") ? "" : jsonObjectCC.getString("enroll_hou_q12"),
+                                    jsonObjectCC.getString("enroll_sec_q12").equals("null") ? "" : jsonObjectCC.getString("enroll_sec_q12"),
+                                    jsonObjectCC.getString("enroll_land_q12").equals("null") ? "" : jsonObjectCC.getString("enroll_land_q12"),
+                                    jsonObjectCC.getString("enroll_q14").equals("null") ? "" : jsonObjectCC.getString("enroll_q14"),
+                                    jsonObjectCC.getString("enroll_q15").equals("null") ? "" : jsonObjectCC.getString("enroll_q15"),
+                                    jsonObjectCC.getString("enroll_q16").equals("null") ? "" : jsonObjectCC.getString("enroll_q16"),
 
 
                             });
 
-                        }*/
+                        }
+
+
                         writer.writeAll(data); // data is adding to csv
 
                         writer.close();
