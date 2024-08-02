@@ -3,6 +3,7 @@ package com.example.redcapdatadownloader;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -10,11 +11,14 @@ import android.view.View;
 import android.widget.Toast;
 
 public class csvdownloader extends AppCompatActivity {
+    private static final int STORAGE_PERMISSION_CODE = 23;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_csvdownloader);
     }
+
 
     public void DownloadDataCSV(View view) {
         ConnectivityManager connMgr = (ConnectivityManager)

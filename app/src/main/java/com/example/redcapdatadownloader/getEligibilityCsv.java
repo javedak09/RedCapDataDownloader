@@ -181,6 +181,7 @@ public class getEligibilityCsv extends AsyncTask<String, String, String> {
                                 "enroll_hou_q12",
                                 "enroll_sec_q12",
                                 "enroll_land_q12",
+                                "enroll_q13",
                                 "enroll_q14",
                                 "enroll_q15",
                                 "enroll_q16"
@@ -203,6 +204,7 @@ public class getEligibilityCsv extends AsyncTask<String, String, String> {
                                     jsonObjectCC.getString("enroll_hou_q12").equals("null") ? "" : jsonObjectCC.getString("enroll_hou_q12"),
                                     jsonObjectCC.getString("enroll_sec_q12").equals("null") ? "" : jsonObjectCC.getString("enroll_sec_q12"),
                                     jsonObjectCC.getString("enroll_land_q12").equals("null") ? "" : jsonObjectCC.getString("enroll_land_q12"),
+                                    jsonObjectCC.getString("enroll_q13").equals("null") ? "" : jsonObjectCC.getString("enroll_q13"),
                                     jsonObjectCC.getString("enroll_q14").equals("null") ? "" : jsonObjectCC.getString("enroll_q14"),
                                     jsonObjectCC.getString("enroll_q15").equals("null") ? "" : jsonObjectCC.getString("enroll_q15"),
                                     jsonObjectCC.getString("enroll_q16").equals("null") ? "" : jsonObjectCC.getString("enroll_q16"),
